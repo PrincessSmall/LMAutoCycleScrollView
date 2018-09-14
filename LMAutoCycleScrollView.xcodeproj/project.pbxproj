@@ -15,6 +15,8 @@
 		EEC21F1A212549CC00157A98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC21F19212549CC00157A98 /* main.m */; };
 		EEC21F24212549CC00157A98 /* LMAutoCycleScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC21F23212549CC00157A98 /* LMAutoCycleScrollViewTests.m */; };
 		EEC21F2F212549CC00157A98 /* LMAutoCycleScrollViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC21F2E212549CC00157A98 /* LMAutoCycleScrollViewUITests.m */; };
+		EEC21F3E21254B0500157A98 /* LMAutoCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC21F3D21254B0500157A98 /* LMAutoCycleScrollView.m */; };
+		EEC21F412126711700157A98 /* LMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC21F402126711700157A98 /* LMPageControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		EEC21F2A212549CC00157A98 /* LMAutoCycleScrollViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LMAutoCycleScrollViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC21F2E212549CC00157A98 /* LMAutoCycleScrollViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMAutoCycleScrollViewUITests.m; sourceTree = "<group>"; };
 		EEC21F30212549CC00157A98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEC21F3C21254B0500157A98 /* LMAutoCycleScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMAutoCycleScrollView.h; sourceTree = "<group>"; };
+		EEC21F3D21254B0500157A98 /* LMAutoCycleScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMAutoCycleScrollView.m; sourceTree = "<group>"; };
+		EEC21F3F2126711700157A98 /* LMPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMPageControl.h; sourceTree = "<group>"; };
+		EEC21F402126711700157A98 /* LMPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMPageControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,10 @@
 				EEC21F0B212549CA00157A98 /* AppDelegate.m */,
 				EEC21F0D212549CA00157A98 /* ViewController.h */,
 				EEC21F0E212549CA00157A98 /* ViewController.m */,
+				EEC21F3C21254B0500157A98 /* LMAutoCycleScrollView.h */,
+				EEC21F3D21254B0500157A98 /* LMAutoCycleScrollView.m */,
+				EEC21F3F2126711700157A98 /* LMPageControl.h */,
+				EEC21F402126711700157A98 /* LMPageControl.m */,
 				EEC21F10212549CA00157A98 /* Main.storyboard */,
 				EEC21F13212549CC00157A98 /* Assets.xcassets */,
 				EEC21F15212549CC00157A98 /* LaunchScreen.storyboard */,
@@ -264,6 +274,8 @@
 			files = (
 				EEC21F0F212549CA00157A98 /* ViewController.m in Sources */,
 				EEC21F1A212549CC00157A98 /* main.m in Sources */,
+				EEC21F3E21254B0500157A98 /* LMAutoCycleScrollView.m in Sources */,
+				EEC21F412126711700157A98 /* LMPageControl.m in Sources */,
 				EEC21F0C212549CA00157A98 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
