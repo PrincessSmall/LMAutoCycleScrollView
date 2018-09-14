@@ -44,8 +44,7 @@
 
 
 /**
- 设置轮播的主要逻辑
-
+ 设置轮播图的主要逻辑
  @param count 需要展示的图片数目
  */
 -(void)setImageCount:(NSUInteger)count{
@@ -121,7 +120,6 @@
 #pragma mark --UIScrollViewDelegate
 /**
  1. 在边界处进行判断，实现scrollview和pagecontrol的跳转
- 
  */
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
