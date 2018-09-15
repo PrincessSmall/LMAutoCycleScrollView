@@ -62,6 +62,7 @@
             imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"image%d",i]];
             
         }
+        imageView.contentMode = UIViewContentModeScaleAspectFit;//等比例填充图片，按照长或者宽有一边抵达边界为止，不会变形，可能会填不满viewqu yu
         [self.scrollView addSubview:imageView];
     }
     //赋值给实例变量count
@@ -92,6 +93,7 @@
         _scrollView.bounces = NO;
         //是否显示水平滚动条，默认是YES
         _scrollView.showsHorizontalScrollIndicator = NO;
+        
     }
     return _scrollView;
 }
