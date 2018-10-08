@@ -176,7 +176,7 @@
     
     self.pageControl.currentPage = _page;
     self.pageControl1.currentPage = _page;
-    //这里pageControl的页数和scrollView有差异，导致会出现随着时间轮播
+    //这里pageControl的页数和scrollView有差异，scrollView会滚动就会调用scrollViewDidScroll:方法，相应页码就会变动，随即会出现随着时间轮播
     [self.scrollView setContentOffset:CGPointMake(Width * (self.pageControl1.currentPage+2), 0) animated:YES];
     _page ++;
 }
