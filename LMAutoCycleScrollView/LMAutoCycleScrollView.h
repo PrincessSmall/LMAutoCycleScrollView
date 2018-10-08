@@ -10,14 +10,12 @@
 
 @interface LMAutoCycleScrollView : UIView{
     
-    
     BOOL isDirection;
     
 }
 
 /**
  设置轮播图片
-
  @param count 需要展示的图片个数
  */
 -(void)setImageCount:(NSUInteger)count;

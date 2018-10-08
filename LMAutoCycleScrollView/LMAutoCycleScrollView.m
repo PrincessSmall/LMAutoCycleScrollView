@@ -13,13 +13,13 @@
 #define Height self.frame.size.height
 
 @interface LMAutoCycleScrollView()<UIScrollViewDelegate>{
-    NSInteger _count;
+    NSInteger _count;//实际放置的图片张数
     NSInteger _page;//记录pageControl的当前页数
 }
 
 @property (nonatomic ,strong)UIScrollView * scrollView;
 /*计时器*/
-@property (nonatomic ,strong)NSTimer * timer;
+@property (nonatomic ,weak)NSTimer * timer;//定时器用weak就可以了
 /*系统pageControl*/
 @property (nonatomic ,strong)UIPageControl * pageControl;
 /*自定义pageControl*/
@@ -37,7 +37,6 @@
         [self addSubview:self.pageControl];
         [self addSubview:self.pageControl1];
         
-       
     }
     return self;
 }
@@ -49,30 +48,30 @@
  */
 -(void)setImageCount:(NSUInteger)count{
     //首尾各加一张图片，所以图片个数加2
-    count = count + 2;
+    _count = count +2;
+//    count = count + 2;
     //for循环摆图，首尾特别设置一下，其他依次排图
-    for (int i = 0; i < count; i++) {
+    for (int i = 0; i < _count; i++) {
         UIImageView * imageView = [[UIImageView alloc]initWithFrame:CGRectMake(i * Width, 0, Width, Height)];
         if (i == 0) {
             imageView.image = [UIImage imageNamed:@"image4"];
-        }else if (i == count -1){
+        }else if (i == count){
             imageView.image = [UIImage imageNamed:@"image1"];
         }else
         {
             imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"image%d",i]];
             
         }
-        imageView.contentMode = UIViewContentModeScaleAspectFit;//等比例填充图片，按照长或者宽有一边抵达边界为止，不会变形，可能会填不满viewqu yu
+        imageView.contentMode = UIViewContentModeScaleAspectFit;//等比例填充图片，按照长或者宽有一边抵达边界为止，不会变形，可能会填不满viewd区域
         [self.scrollView addSubview:imageView];
     }
-    //赋值给实例变量count
-    _count = count;
+ 
     //设置pageControl的page数目，为了和下面自定义pageControl做对比的
-    self.pageControl.numberOfPages = _count-2;
+    self.pageControl.numberOfPages = count;
     //pageControl的当前页
     self.pageControl.currentPage = 0;
     //自定义pageControl1的page数目
-    self.pageControl1.numberOfPages = _count-2;
+    self.pageControl1.numberOfPages = count;
     //设置scrollView的contentSize，只有设置了，scrollView才能够滚动
     self.scrollView.contentSize = CGSizeMake(Width*_count, Height);
     //设置scrollView的当前显示位置
@@ -163,6 +162,7 @@
 -(void)startNSTimer{
     
     self.timer = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(changeCurrentPage) userInfo:nil repeats:YES];
+    //放置线程堵塞，设置线程，使得主线程有任务进行的时候，定时器依然可以操作；
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
 }
 -(void)endNStimer{
